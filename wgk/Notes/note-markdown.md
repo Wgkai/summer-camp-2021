@@ -1,4 +1,7 @@
-### 块级元素
+## Markdown 笔记
+
+### 一、块级元素
+
 #### 标题
 第一种：
 >This is an H1
@@ -58,3 +61,80 @@ id sem consectetuer libero luctus adipiscing.
 >\- - -
 >
 >\---------------------------------------
+
+---------------------------
+
+### 二、内联元素
+
+#### 链接:link:
+
+Markdown 支持两种链接形式: 内联 和 引用.
+
+##### 内联
+
+要创建内联链接, 只需在链接文本的右括号后面紧接一对圆括号. 圆括号里面放所需的 URL 链接, 还可以放一个 可选 的链接标题, 标题要用引号包围. 例如:
+
+> This is \[an example\](http://example.com/ "Title") inline link.
+>
+> \[This link](http://example.net/) has no title attribute.
+
+效果如下：
+
+>This is [an example](http://example.com/ "Title") inline link.
+>
+>[This link](http://example.net/) has no title attribute.
+
+##### 引用
+
+* 引用类型的链接放在第二个中括号里, 括号里面放链接标签:
+
+  > This is \[an example][id] reference-style link.
+
+  接下来, 在文档中的任意位置, 你可以像下面那样定义链接标签, 需要单独占一行:
+
+  > \[id]:http://example.com/  "Optional Title Here"(这一行是看不见的)
+
+  然后，效果如下：
+
+  [id]: http://example.com/
+
+  > This is [an example][id] reference-style link.
+
+* 隐含链接名称
+
+  这样写:   
+
+  > \[Google][]
+
+  同时这样定义链接:
+
+  > \[Google]: http://google.com/
+
+  然后，效果如下：
+
+  [Google]: http://google.com/
+
+  > [Google][]
+
+#### 图片
+
+* 内联图片语法如下:
+
+  > !\[Alt text](/path/to/img.jpg)
+
+  > !\[Alt text](/path/to/img.jpg "Optional title")
+
+* 引用图片语法如下:
+
+  > !\[Alt text][id]
+
+  "id" 是图片引用的名称. 图片引用使用链接定义的相同语法:
+
+  > \[id]: url/to/image  "Optional title attribute"
+
+
+
+----------------------------------
+
+### The End:sleepy::sleepy::sleepy:
+
