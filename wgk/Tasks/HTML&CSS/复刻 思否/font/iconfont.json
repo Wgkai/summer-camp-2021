@@ -55,6 +55,13 @@
       "unicode_decimal": 58963
     },
     {
+      "icon_id": "14187240",
+      "name": "横向滚动条",
+      "font_class": "hengxianggundongtiao",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
       "icon_id": "14958329",
       "name": "微信",
       "font_class": "weixin",
