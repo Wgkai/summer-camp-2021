@@ -14,8 +14,7 @@ var things = todoul.querySelectorAll('.things');
 var flag = 1;//用来标识当前在All还是Active还是Completed
 var count = document.querySelector('.count');
 
-setInterval(function () {
-  //想不出来好方法了Orz，略显暴力
+function update() {
   let cnt = 0;
   chboxes = todoul.querySelectorAll('.chboxes');//!!!
   checks = todoul.querySelectorAll('.check');
@@ -45,8 +44,7 @@ setInterval(function () {
   else {
     tab.style.display = 'block';
   }
-}, 100);
-
+}
 
 text.addEventListener('keyup', function (e) {
   if (text.value != '' && e.keyCode == 13) {
@@ -78,16 +76,19 @@ text.addEventListener('keyup', function (e) {
     newbutton.className = "delete";
     newbutton.innerHTML = "×";
     newli.appendChild(newbutton);
+    update();
     //给新创建的事项绑定删除事件
     newbutton.addEventListener('click', function () {
       todoul.removeChild(newli);
       if (!todolis.length) {
         allchoose.style.color = "#e6e6e6";
       }
+      update();
     })
     //给新创建的事项绑定勾选事件
     newdiv.addEventListener('click', function () {
       //勾选某一个事项
+      update();
       if (checkbox.checked == true) {
         if (flag == 1) {
           newinput.className = "things change-input";
@@ -107,7 +108,7 @@ text.addEventListener('keyup', function (e) {
         }
         newdiv.className = "check";
       }
-
+      update();
       //勾选全部事项，上方箭头变颜色的效果
       let chflag = true;
       for (let j = 0; j < todolis.length; j++) {
@@ -121,6 +122,7 @@ text.addEventListener('keyup', function (e) {
       } else {
         allchoose.style.color = "#e6e6e6";
       }
+      update();
     })
 
     newinput.addEventListener('dblclick', function () {
@@ -151,6 +153,7 @@ text.addEventListener('keyup', function (e) {
 all.className = "all current";
 all.addEventListener('click', function () {
   //给All切换按钮添加侦听
+  update();
   all.className = "all current";
   act.className = "act";
   com.className = "com";
@@ -162,6 +165,7 @@ all.addEventListener('click', function () {
 
 act.addEventListener('click', function () {
   //给Active切换按钮添加侦听
+  update();
   all.className = "all";
   act.className = "act current";
   com.className = "com";
@@ -178,6 +182,7 @@ act.addEventListener('click', function () {
 
 com.addEventListener('click', function () {
   //给Completed切换按钮添加侦听
+  update();
   all.className = "all";
   act.className = "act";
   com.className = "com current";
@@ -193,6 +198,7 @@ com.addEventListener('click', function () {
 
 allchoose.addEventListener('click', function () {
   //点击上方箭头，选择全部事项的效果
+  update();
   let fg = 0;
   for (let j = 0; j < todolis.length; j++) {
     if (chboxes[j].checked == false) {
@@ -226,11 +232,12 @@ allchoose.addEventListener('click', function () {
       allchoose.style.color = "#e6e6e6"
     }
   }
-
+  update();
 })
 
 clear.addEventListener('click', function () {
   //清除已完成的事项
+  update();
   for (let i = todolis.length - 1; i >= 0; i--) {
     if (chboxes[i].checked == true) {
       todoul.removeChild(todoul.childNodes[i]);
@@ -240,4 +247,5 @@ clear.addEventListener('click', function () {
       console.log(todolis);
     }
   }
+  update();
 })

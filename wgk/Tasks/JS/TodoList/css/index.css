@@ -123,6 +123,7 @@ input::-ms-input-placeholder {
 
 .todo ul li {
   display: flex;
+  justify-content: right;
 }
 .count {
   position: absolute;
@@ -136,7 +137,7 @@ input[type='checkbox'] {
 label {
   display: inline-block;
   width: 40px;
-  height: 40px;
+  height: 100%;
   margin: 9.4px 0;
   /* border: #000 1px solid; */
   /* border-radius: 50%; */
@@ -144,7 +145,6 @@ label {
 }
 
 .check {
-  /* background-color: pink; */
   background-image: url('../images/circle1.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -163,23 +163,24 @@ label {
 }
 
 .lis:hover .delete {
-  display: block;
+  display: inline;
 }
 
 .things {
-  width: 505px;
-  height: 65.5px;
+  width: 490px;
+  height: auto;
   line-height: 35.5px;
   padding: 15px;
   outline: none;
   border: none;
   font-size: 24px;
   cursor: default;
+  word-wrap: break-word;
 }
 
 .delete {
   display: none;
-  margin-right: 20px;
+  margin-right: 10px;
   color: #af5b5e;
   font-size: 35px;
   border: none;
@@ -234,7 +235,6 @@ section::after,
   position: relative;
   left: -13px;
   top: -15px;
-
   width: 505px;
   height: 65.5px;
   outline: none;
