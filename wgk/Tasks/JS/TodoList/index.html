@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="font/iconfont.js"></script>
+    <link rel="stylesheet" href="font/iconfont.css" />
+    <title>todo</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>todos</h1>
+        <div>
+          <span class="iconfont allchoose">&#xe61e;</span>
+          <input type="text" placeholder="What needs to be done?" class="new" />
+        </div>
+      </header>
+      <section>
+        <div class="todo">
+          <ul></ul>
+        </div>
+        <footer class="tab">
+          <span class="count"></span>
+          <ul>
+            <li><span class="all">All</span></li>
+            <li><span class="act">Active</span></li>
+            <li><span class="com">Completed</span></li>
+          </ul>
+          <button class="clear">Clear completed</button>
+        </footer>
+      </section>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
