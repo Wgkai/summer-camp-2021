@@ -1,10 +1,11 @@
 'use strict'
-
+var colos = require('colors');
 var
   fs = require('fs'),
   url = require('url'),
   path = require('path'),
   http = require('http');
+const { rootCertificates } = require('tls');
 
 var root = path.resolve(process.argv[2] || '.'); //从命令行中获取当前的路径
 
@@ -71,4 +72,4 @@ var server = http.createServer(function (request, response) {
 
 server.listen(8080);
 
-console.log('Server is running at http://127.0.0.1:8080/');
+console.log('Server is running at http://127.0.0.1:8080/'.rainbow);
